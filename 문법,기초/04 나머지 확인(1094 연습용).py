@@ -1,5 +1,7 @@
-num = 34
+# num = 34
 
-num = num % 1
+# num = num % 1
 
-print(num)
+# print(num)
+
+print(9//2)
