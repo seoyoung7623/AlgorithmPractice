@@ -1,12 +1,11 @@
-n = int(input())
+#n = int(input())
 
 # dp = [-1,-1,-1,1,-1,1]
 
 # for i in range(6,n+1):
 #     if dp[i-3] 
 #     dp[i] = min(dp[i-3]+1,dp[i-5]+1)
-minlist = []
-cnt = 0
+# minlist = []
 # while n>0:
 #     if n % 3 == 0:
 #         cnt+=(n//3)
@@ -25,7 +24,8 @@ cnt = 0
 #     print(-1)
 # else:
 #     print(min(minlist))
-
+n = int(input())
+cnt = 0
 while n >= 0:
     if n % 5 == 0:
         cnt += (n//5)
