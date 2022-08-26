@@ -22,7 +22,7 @@ for i in range(len(mlist)):
     if mlist[i] == nlist[min]:
         
 
-    while start <= end:
+#    while start <= end:
         
 
 
