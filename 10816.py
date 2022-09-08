@@ -20,9 +20,7 @@ end = len(nlist) -1
 for i in range(len(mlist)):
     min = (start+end)//2
     if mlist[i] == nlist[min]:
+        print()
         
 
 #    while start <= end:
-        
-
-
