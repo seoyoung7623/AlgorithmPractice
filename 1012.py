@@ -6,7 +6,7 @@ def bfs(graph,a,b):
     queue.append((a,b))
     graph[a][b] = 0
 
-    while queue:
+    while queue: ## queue를 다 탐색할때까지 반복하는것 같은데 queue가 하나밖에 없는거 아님? = while q: 큐가 빌때까지 반복실행
         x,y = queue.popleft()
         for i in range(4):
             nx = x+dx[i]
