@@ -61,6 +61,10 @@ for _ in range(m):
     a,b = map(int, input().split())
     graph[a][b] = graph[b][a] = 1
 
+print("깊이 우선탐색:",end=" ")
 dfs(v)
 print()
+print("너비 우선탐색:",end=" ")
 bfs(v)
+
+
