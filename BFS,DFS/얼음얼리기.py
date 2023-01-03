@@ -1,4 +1,5 @@
-N,M = map(int,input().split())
+# 얼음얼리기
+N,M = map(int,input().split()) 
 
 ice = [list(map(int,input())) for _ in range(N)]
 cnt = 0
