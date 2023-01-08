@@ -5,7 +5,7 @@ data = [1, 2, 3, 2, 5] # 전체 수열
 count = 0
 interval_sum = 0
 end = 0
-
+'''
 # start를 차례대로 증가시키며 반복
 for start in range(n):
     # end를 가능한 만큼 이동시키기
@@ -18,10 +18,16 @@ for start in range(n):
     interval_sum -= data[start]
 
 print(count)
+'''
+
+
+#######################################
 
 for start in range(n):
-    while interval_sum < m and end< n:
-        interval_sum += data[end]
-        end += 1
+    while interval_sum < m and end < n:
+        interval_sum +=data[end]
+        end+=1
     if interval_sum == m:
         count += 1
+    interval_sum -=data[start]
+print(count)
