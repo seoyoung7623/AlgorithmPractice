@@ -19,6 +19,17 @@ print(q)
 '''
 
 #2023.01.08 음수 인덱스
+'''
 listtest = [1,2,3,4,5,6,7,8,9]
 print(listtest[-3])
 print(listtest[-1])
+'''
+
+#2023.01.09
+import sys
+input = sys.stdin.readline()
+
+num = map(int,input.split())
+
+for i in num:
+    print(i)
