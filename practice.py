@@ -26,6 +26,7 @@ print(listtest[-1])
 '''
 
 #2023.01.09
+'''
 import sys
 input = sys.stdin.readline()
 
@@ -33,3 +34,11 @@ num = map(int,input.split())
 
 for i in num:
     print(i)
+'''
+
+#2023.01.10
+'''
+graph = [[1,2,3,4,5,6] for _ in range(5)]
+graph[3] += [4] #그래프 3에 4를 추가한다. 하나의 리스트 인덱스에 추가됨
+print(graph[3])
+'''
