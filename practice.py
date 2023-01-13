@@ -47,3 +47,8 @@ graph += [4] #리스트 붙이기!
 print(graph)
 
 '''
+
+#2023.01.11
+graph = [0 for _ in range(20)]
+for i in graph:
+    print(i)
