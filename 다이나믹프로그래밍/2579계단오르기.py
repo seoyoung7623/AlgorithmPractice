@@ -1,4 +1,5 @@
 #2579 계단 오르기
+#다이나믹프로그래밍
 '''
 n = int(input())
 numlist = []
@@ -39,5 +40,5 @@ dp[1] = s[1] + s[0]
 dp[2] = max(s[0]+s[2],s[1]+s[2])
 for i in range(3,n):
     dp[i] = max(dp[i-3] + s[i-1] + s[i], dp[i-2]+ s[i])
-print(dp[n-1])
+print(dp[n-1]) 
 
