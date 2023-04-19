@@ -20,5 +20,3 @@ for i in range(N):
     for j in range(M):
         if dfs(i,j) == True:
             cnt +=1
-print(cnt)
-
