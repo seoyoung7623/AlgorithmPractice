@@ -2,26 +2,6 @@
 # 백트래킹
 # 부루트포스 알고리즘
 
-# N = int(input())
-# num_lst= list(map(int,input().split()))
-# operator = list(map(int,input().split()))
-# result_op = []
-# result_num=[]
-# num = 0
-# cnt = 0
-
-# def back():
-#     if len(result_op) == N:
-#         result_num.append(num)
-#         num = 0
-#         return
-#     for i in range(N):
-#         if operator[i] != 0 and op not in result_op:
-#             if i == 0:
-#                 num += num_list[]
-
-#         op  = operator[i] 
-
 import sys
 input = sys.stdin.readline
 N = int(input())
@@ -33,7 +13,7 @@ minimum = 1e9
 
 def back(depth,total,plus,sub,mul,div):
     global maximum,minimum
-    if depth == N:
+    if depth == N: # depth 이용!!
         maximum = max(total,maximum)
         minimum = min(total,minimum)
         return
@@ -44,7 +24,7 @@ def back(depth,total,plus,sub,mul,div):
     if mul:
         back(depth+1,total*num_list[depth],plus,sub,mul-1,div)
     if div:
-        back(depth+1,int(total/num_list[depth]),plus,sub,mul,div-1)
+        back(depth+1,int(total/num_list[depth]),plus,sub,mul,div-1) # //는 반올림: -10//3=-4 int(/) 는 소숫점을 지움: int(-10/3):-3
 
 
 back(1,num_list[0],operator[0],operator[1],operator[2],operator[3])
