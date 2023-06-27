@@ -7,7 +7,7 @@ N = int(input())
 list = list(map(int,input().split()))
 result = [0]*N
 
-for i in range(N):
+for i in range(1,N+1):
     t = list[i-1]
     cnt = 0
     for j in range(N):
