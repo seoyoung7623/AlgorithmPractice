@@ -49,6 +49,13 @@ print(graph)
 '''
 
 #2023.01.11
-graph = [0 for _ in range(20)]
-for i in graph:
-    print(i)
+# graph = [0 for _ in range(20)]
+# for i in graph:
+#     print(i)
+
+#2023.07.10
+# for i in range(10,0,-1):
+#     print(i)
+
+print(list('tytytyty'))
+
