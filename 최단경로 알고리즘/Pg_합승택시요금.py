@@ -28,4 +28,25 @@ def solution(n, s, a, b, fares):
         answer = min(answer,distance[s][i]+distance[i][a]+distance[i][b])
     return answer
 
-print(solution(6,4,6,2,[[4, 1, 10], [3, 5, 24], [5, 6, 2], [3, 1, 41], [5, 1, 24], [4, 6, 50], [2, 4, 66], [2, 3, 22], [1, 6, 25]]))
+# 플로이드 와샬 알고리즘
+def solution2(n, s, a, b, fares):
+    INF = int(1e9)
+    answer = INF
+    graph = [[INF] * (n+1) for _ in range(n+1)] # 2중 리스트 생성
+    def floyd_warshall():
+        for k in range(1,1+n):
+            for i in range(1,n+1):
+                for j in range(1,n+1):
+                    if i == j:
+                        graph[i][j] = 0 # 대각선 0으로 초기화
+                    else:
+                        graph[i][j] = min(graph[i][k] + graph[k][j],graph[i][j])
+    for x,y,z in fares:
+        graph[x][y] = z
+        graph[y][x] = z
+    floyd_warshall()
+
+    for i in range(1,n+1):
+        answer = min(graph[s][i]+graph[i][a]+graph[i][b],answer)
+    return answer
+print(solution2(6,4,6,2,[[4, 1, 10], [3, 5, 24], [5, 6, 2], [3, 1, 41], [5, 1, 24], [4, 6, 50], [2, 4, 66], [2, 3, 22], [1, 6, 25]]))
