@@ -11,7 +11,8 @@ for _ in range(m): #a번 노드에서 b번노드로 가는 비용이 c
     a,b,c = map(int,input().split())
     graph[a].append((b,c)) #
 
-def dijkstra(start):
+# heapq 오름차순으로 힙정렬 수행됨
+def dijkstra(start):  
     q =[]
     heapq.heappush(q,(0,start)) # 빈 q, 시작노드 정보 우선순위 큐에 삽입
     distance[start] = 0 #시작노드 기록
@@ -21,9 +22,9 @@ def dijkstra(start):
              continue
         for next in graph[node]: #큐에서 뽑아낸 노드와 인접된 인접노드들 탐색
             cost = distance[node] + next[1] # 시작 -> node + node->node의 인접 노드
-            if cost < distance[next[0]]: #cost < 시작 -> 노드의 인접노드 거리
+            if cost < distance[next[0]]: #cost < 시작 -> 노드의 인접노드 거리 바뀐값만 힙에 넣어줌
                 distance[next[0]] = cost #cost로 초기화
-                heapq.heappush(q,(cost,next[0]))
+                heapq.heappush(q,(cost,next[0])) # dist에 바뀐값과, 도착노드를 넣어줌
 
 dijkstra(start)
 
