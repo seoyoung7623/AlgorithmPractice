@@ -22,7 +22,8 @@ def dijkstra(start):
              continue
         for next in graph[node]: #큐에서 뽑아낸 노드와 인접된 인접노드들 탐색
             cost = distance[node] + next[1] # 시작 -> node + node->node의 인접 노드
-            if cost < distance[next[0]]: #cost < 시작 -> 노드의 인접노드 거리 바뀐값만 힙에 넣어줌
+            if cost < distance[next[0]]: #cost < 시작 -> 노드의 인접노드 거리 바뀐값만 힙에 넣어줌 
+                # 새로운 간선이 더 작은 경우 갱신
                 distance[next[0]] = cost #cost로 초기화
                 heapq.heappush(q,(cost,next[0])) # dist에 바뀐값과, 도착노드를 넣어줌
 
