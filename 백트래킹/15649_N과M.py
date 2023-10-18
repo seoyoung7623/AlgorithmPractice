@@ -1,5 +1,5 @@
 # 15649 N과N S3
-# 백트래킹
+# 백트래킹 중복 허용 순열
 def dfs(n,lst):
     if n==m:
         ans.append(lst)

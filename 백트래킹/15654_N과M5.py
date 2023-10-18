@@ -1,4 +1,5 @@
 # 15654 N과M(5)
+# 지정 숫자들의 순열 사전순 중복혀용
 N,M = map(int,input().split())
 arr = list(map(int,input().split()))
 answer = []
@@ -13,8 +14,9 @@ def backtracking(start):
         box.append(arr[i])
         backtracking(start+1)
         box.pop()
-arr.sort()
+arr.sort() #사전순
 box = []
 backtracking(0)
 for i in answer:
     print(*i)  
+
