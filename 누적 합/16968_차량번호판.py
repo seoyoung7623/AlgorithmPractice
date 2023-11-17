@@ -3,7 +3,6 @@
 중복이 3개 이상인 경우 10, 9, 8 이 아니라 10,9,9!
 '''
 ans = input()
-result = 0
 if ans[0] == 'c':
     result = 26
 else:
@@ -13,7 +12,7 @@ for i in range(1,len(ans)):
         if ans[i-1] == 'c':
             result *= 25
         else:
-            result * 26
+            result *= 26
     else:
         if ans[i-1] == 'd':
             result *= 9
