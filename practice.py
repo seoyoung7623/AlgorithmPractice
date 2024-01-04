@@ -57,5 +57,37 @@ print(graph)
 # for i in range(10,0,-1):
 #     print(i)
 
-print(list('tytytyty'))
+# print(list('tytytyty'))
 
+# a = '123112341231'
+# a.replace('1231','X')
+# print(a)
+# num = a.count('X')
+# print(num)
+# a = 'hello world'
+# a.replace('hello','hi')
+# print(a)
+
+## 햄버거 쌓기
+# def solution(ingredient):
+#     answer = 0
+#     hamburger = ''.join(map(str, ingredient))
+    
+#     while 1:
+#         if '1231' in hamburger:
+#             answer += hamburger.count('1231')
+#             hamburger = hamburger.replace('1231','')
+#         else:
+#             break
+#     return answer
+# print(solution([2, 1, 1, 2, 3, 1, 2, 3, 1]))
+
+## 2024.01.04 PGM) 입문자 코테
+def solution(n):
+    # answer = []
+    n_str = list(str(n))
+    n_str_reverse = n_str.reverse()
+    answer = '[' + ','.join(n_str_reverse)+']'
+
+    return answer
+print(solution(12345))
