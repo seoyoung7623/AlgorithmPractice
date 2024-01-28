@@ -1,4 +1,14 @@
-#9012 괄호 스택이용 맞았음~ 풀이는 조금 틀림
+#9012 괄호 S4
+'''
+스택이용 경우의 수 판단
+1. ')'로 끝나는 경우
+2. '('로 끝나는 경우
+
+1-1. ')'로 끝났는데 스택이 있는 경우 o pop가능
+1-2. ')'로 끝났는데 스택이 없는 경우 x
+2-1. 문자열을 다 돌았는데 스택이 있는 경우 x
+2-2. 문자열을 다 돌았는데 스택이 없는 경우 o
+'''
 from inspect import stack
 
 num = int(input())
@@ -20,12 +30,3 @@ for n in range(num):
             print("YES")
         else:
             print("NO")
- 
- 
-    #     if ('(' in stack ) and (')' in stack) and stack[stack.index(')')-1]=='(':
-    #         stack.pop()
-    #         stack.pop()
-    # if not stack:
-    #     print("YES")
-    # else:
-    #     print("NO")
