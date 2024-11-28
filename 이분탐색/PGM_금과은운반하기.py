@@ -1,4 +1,4 @@
-# 금과 은 운반하기
+# 금과 은 운반하기 LV3
 def solution(a, b, g, s, w, t):
     answer = int(10**16)
     left,right = 0,int(10**16)
