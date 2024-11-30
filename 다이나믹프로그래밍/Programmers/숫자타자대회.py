@@ -1,4 +1,4 @@
-# 숫자타자 대회
+# 숫자타자 대회 Lv3
 '''
 - DP
 왼손과 오른손의 위치를 저장하고, 현재 위치에서 다음 위치로 이동하는데 드는 비용을 계산하여
@@ -45,5 +45,5 @@ def solution(numbers):
     return min(dp.values())
 
         
-print(solution("5123"))
-print(solution("1756"))
+# print(solution("5123"))
+# print(solution("0131313"))
