@@ -1,4 +1,12 @@
 # 1167 트리의 지름 G2
+'''
+재귀 깊이를 늘려주어 런타임 에러를 해결한다.
+백준의 기본 재귀 깊이는 10^3 밖에 안됨 따라서 N의 최대는 10^5이므로
+10^6으로 늘려주었음.
+'''
+import sys
+sys.setrecursionlimit(10**6)
+
 v = int(input())
 graph = [[] for _ in range(v+1)]
 for _ in range(v):
