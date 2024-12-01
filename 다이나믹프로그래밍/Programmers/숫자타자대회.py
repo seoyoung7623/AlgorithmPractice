@@ -33,17 +33,16 @@ def solution(numbers):
         new_dp = {}
         next_pos = key_pad[number]
         for (l_pos, r_pos), current in dp.items():
-            if l_pos != next_pos: # 왼손에 있을경우 그 수를 누름
+            if next_pos != r_pos: # 다음 숫자가 오른손에 있으면 안됨
                 left_cost = current + cost(l_pos, next_pos)
                 new_dp[(next_pos, r_pos)] = min(new_dp.get((next_pos, r_pos), float('inf')), left_cost)
-            
-            if r_pos != next_pos:
+            if next_pos != l_pos: # 다음 숫자가 왼손에 있으면 안됨
                 right_cost = current + cost(r_pos, next_pos)
                 new_dp[(l_pos, next_pos)] = min(new_dp.get((l_pos, next_pos), float('inf')), right_cost)
         dp = new_dp
     
     return min(dp.values())
 
-        
-# print(solution("5123"))
-# print(solution("0131313"))
+print(solution("1756"))
+print(solution("5123"))
+print(solution("0131313"))
