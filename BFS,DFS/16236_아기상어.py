@@ -1,44 +1,10 @@
-# # # 16236 아기상어 G3
-# # from collections import deque
-# # import sys
-# # input = sys.stdin.readline
-
-# # N = int(input())
-# # graph = [list(map(int,input().split())) for _ in range(N)]
-# # dx = [1,-1,0,0]
-# # dy = [0,0,1,-1]
-# # result= 0
-
-# # def BFS(x,y,size,eat):
-# #     global result
-# #     queue = deque()
-# #     queue.append((x,y))
-# #     visited = [[0]*N for _ in range(N)]
-# #     visited[x][y] = 1
-# #     while queue:
-# #         x,y = queue.pop()
-# #         for i in range(4):
-# #             nx = dx[i] + x
-# #             ny = dy[i] + y
-# #             if 0<=nx<N and 0<=ny<N and visited[nx][ny] == 0:
-# #                 if size<graph[nx][ny]: #물고기의 사이즈가 커서 지나갈 수 없음
-# #                     continue
-# #                 elif graph[nx][ny] !=0 and graph[nx][ny]<size: #물고가 작아서 먹음 0이아닌 경우
-# #                     eat += 1
-# #                 visited[nx][ny] = visited[x][y] + 1
-# #                 queue.append((nx,ny))
-# #                 if graph[nx][ny] != 0 and eat == graph[nx][ny]:
-# #                     result += visited[nx][ny]
-# #                     visited = [[0]*N for _ in range(N)]
-# #                     eat = 0
-# #                     size += 1
-
-# # for i in range(N):
-# #     for j in range(N):
-# #         if graph[i][j] == 9:
-# #             BFS(i,j,2,0)
-
-# # print(result)
+# 16236 아기상어 G3
+'''
+https://www.acmicpc.net/problem/16236
+BFS로 상어가 이동 가능한 범위를 탐색.
+먹을 물고기를 후보로 정렬하여 가장 가까운 물고기를 선택.
+상어가 물고기를 먹으며 크기를 증가시킴.
+'''
 
 from collections import deque
 
@@ -90,7 +56,8 @@ while True:
     if not queue: #큐가 비어있다면
         break
 
-    #후보리스트가 나오면 맨 앞의 후보 먹이를 뽑아 위치로 이동
+    # 후보리스트가 나오면 맨 앞의 후보 먹이를 뽑아 위치로 이동
+    # 가장 가까운 물고기 선택
     step,xx,yy = queue.popleft()
     cnt += step #이동한 시간
     size[1] +=1 # 먹이를 먹음
