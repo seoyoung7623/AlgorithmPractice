@@ -2,6 +2,7 @@
 '''
 값 갱신 -> 좌표를 저장해서 갱신
 완전탐색 BFS
+stop 종료 방법 주의
 '''
 from collections import deque
 
