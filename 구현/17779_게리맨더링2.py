@@ -9,7 +9,7 @@ grid.insert(0,[0]*(N+1))
 answer = 1e6
 
 for x in range(1,N+1):
-    for y in range(1+N+1):
+    for y in range(1,N+1):
         for d1 in range(1,N+1):
             for d2 in range(1,N+1):
                 if x+d1+d2>N or y-d1<1 or y+d2>N:
