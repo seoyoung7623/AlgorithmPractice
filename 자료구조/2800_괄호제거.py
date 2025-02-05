@@ -11,10 +11,9 @@
 [(5,7), (1,12)] → "1+(2*3)+(8/4)+1"
 조합이 중복되어 생성되는 경우 발생
 '''
-import copy
 from itertools import combinations
 
-arr = input()
+arr = list(input())
 stack = []
 twin = []
 answer = set()
@@ -26,12 +25,16 @@ for i in range(len(arr)):
 
 for i in range(len(twin)):
     for combo in combinations(twin,i+1):
-        arr_copy = list(copy.deepcopy(arr)) #깊은 복사가 필요없는 이유는?
+        arr_copy = arr[:] #깊은 복사가 필요없는 이유는?
         for idx in combo:
             arr_copy[idx[0]] = arr_copy[idx[1]] = ''
         answer.add(''.join(arr_copy))
 
-answer
 for string in sorted(list(answer)):
     print(string)
 
+'''
+깊은복사 vs 얕은복사
+깊은복사:copy.deepcopy(리스트), 2차원 리스트와 같이 내부 저장공간을 공유하는 경우 깊은 복사를 해야함
+얕은복사: copy.copy(리스트), 리스트[:]
+'''
