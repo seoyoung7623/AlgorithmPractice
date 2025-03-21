@@ -1,12 +1,14 @@
 # 게리맨더링 2 G3
 '''
 고려할점: 선거구 5번의 경우 경계선안에 있기에 내부 채우는것을 주의한다.
-완전탐색하여 선거 경계선을 정하고 인원수를 구한다.
+완전탐색하여 선거 경계선을 정하고 인원수를 구한다. 범위 주의
 '''
+import sys
+input = sys.stdin.readline
 N = int(input())
 grid = [[0]+list(map(int,input().split())) for _ in range(N)]
 grid.insert(0,[0]*(N+1))
-answer = 1e6
+answer = 1e9
 
 for x in range(1,N+1):
     for y in range(1,N+1):
@@ -48,7 +50,7 @@ for x in range(1,N+1):
                             population[2] += grid[r][c]
                         elif x+d1<=r and c<y-d1+d2:#3선거구
                             population[3] += grid[r][c]
-                        elif x+d2<r and y-d1+d2<=c:
+                        elif x+d2<r and y-d1+d2<=c: #4선거구
                             population[4] += grid[r][c]
                 max_pop = max(population[1:])
                 min_pop = min(population[1:])
