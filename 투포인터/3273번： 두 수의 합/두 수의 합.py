@@ -1,39 +1,29 @@
 #  **************************************************************************  #
 #                                                                              #
 #                                                       :::    :::    :::      #
-#    Problem Number: 12904                             :+:    :+:      :+:     #
+#    Problem Number: 3273                              :+:    :+:      :+:     #
 #                                                     +:+    +:+        +:+    #
 #    By: seoyoung7623 <boj.kr/u/seoyoung7623>        +#+    +#+          +#+   #
 #                                                   +#+      +#+        +#+    #
-#    https://boj.kr/12904                          #+#        #+#      #+#     #
-#    Solved: 2025/03/19 18:35:31 by seoyoung7623  ###          ###   ##.kr     #
+#    https://boj.kr/3273                           #+#        #+#      #+#     #
+#    Solved: 2025/03/22 23:31:04 by seoyoung7623  ###          ###   ##.kr     #
 #                                                                              #
 #  **************************************************************************  #
-'''
-문자열
-출력 가능,불가능
+n = int(input())
+arr = list(map(int,input().split()))
+x = int(input())
+arr.sort()
+left = 0
+right = n-1
 
-내 접근: 백트래킹
-접근법: 거꾸로 접근
-
-끝까지 예시를 따라해보자,,,
-'''
-S = input()
-T = input()
 answer = 0
-
-while len(T)>= len(S):
-    if T == S:
-        answer = 1
-        break
-    if T[-1] == 'A':
-        T = T[0:-1]
-    elif T[-1] == 'B':
-        T = T[0:-1]
-        T = T[::-1]
-
+while left < right:
+    total = arr[left] + arr[right]
+    if total > x:
+        right -= 1
+    elif total < x:
+        left += 1
+    else:
+        answer += 1
+        left += 1
 print(answer)
-
-    
-    
-
