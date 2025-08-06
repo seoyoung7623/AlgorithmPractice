@@ -7,6 +7,23 @@
 반복문과 문자열 * 방식을 적절히 섞어서 주는 재귀 문제
 '''
 
+# N = int(input())
+
+# def draw_star(n):
+#     if n == 1:
+#         return ['*']
+#     prev = draw_star(n//3)
+#     stars = []
+
+#     for row in prev: # 해당 줄 세로로 3줄
+#         stars.append(row*3) # 각 '*'x3
+#     for row in prev:
+#         stars.append(row + ' '*(n//3)+row) # 가운데 빈칸
+#     for row in prev: # 각 '*'x3
+#         stars.append(row*3)
+#     return stars
+# print('\n'.join(draw_star(N)))
+
 N = int(input())
 
 def draw_star(n):
@@ -15,11 +32,13 @@ def draw_star(n):
     prev = draw_star(n//3)
     stars = []
 
-    for row in prev: # 해당 줄 세로로 3줄
-        stars.append(row*3) # 각 '*'x3
-    for row in prev:
-        stars.append(row + ' '*(n//3)+row) # 가운데 빈칸
-    for row in prev: # 각 '*'x3
-        stars.append(row*3)
+    for s in prev:
+        stars.append(s*3)
+    for s in prev:
+        stars.append(s+' '*(n//3))
+    for s in prev:
+        stars.append(s*3)
     return stars
+
 print('\n'.join(draw_star(N)))
+
