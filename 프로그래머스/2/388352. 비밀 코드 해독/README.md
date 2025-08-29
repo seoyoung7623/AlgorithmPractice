@@ -1,10 +1,10 @@
 # [level 2] 비밀 코드 해독 - 388352 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/388352) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/388352?language=python3) 
 
 ### 성능 요약
 
-메모리: 76.3 MB, 시간: 10.30 ms
+메모리: 9.15 MB, 시간: 118.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 08월 29일 17:37:54
+2025년 08월 29일 17:44:50
 
 ### 문제 설명
 
