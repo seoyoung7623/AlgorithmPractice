@@ -1,30 +1,41 @@
-import heapq
-
+'''
+크루스칼 알고리즘
+'''
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for test_case in range(1, T + 1):
     V,E = map(int,input().split())
-    graph = [[] for _ in range(V+1)]
+    edge = [tuple(map(int, input().split())) for _ in range(E)]
     
-    for e in range(E):
-        n1,n2,w = map(int,input().split())
-        graph[n1].append((n2,w))
-        graph[n2].append((n1,w))
-
-    hq = [(0,0)]
-    visited = [False] * (V+1)
+    edge.sort(key = lambda x: x[2])
+    print
+    parent = [i for i in range(V+1)] 
     answer = 0
+    picked = 0
     
-    while hq:
-        w, n = heapq.heappop(hq)
-        if visited[n]:
-            continue
-        visited[n] = True
-        answer += w
-        if False not in visited:
-            break
-        for next_node, cost in graph[n]:
-            if visited[next_node] == False:
-                heapq.heappush(hq,(cost,next_node))
+    # 두 노드를 부모 노드로 변환
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra == rb:
+            return False
+        if ra < rb:
+            parent[rb] = ra
+        else:
+            parent[ra] = rb
+        return True
+
+    # 부모의 노드를 반환
+    def find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
+    
+    for n1,n2,w in edge:
+        if union(n1,n2):
+            answer += w
+            picked += 1
+            if picked == V:
+                break
+            
     print(f"#{test_case} {answer}")
     
